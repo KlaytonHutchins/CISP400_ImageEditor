@@ -108,7 +108,7 @@ bool ImageEditor::operator!=(const ImageEditor& ie) const
                         if (pic.blue(j,i) != ie.pic.blue(j, i)) return true;
                 }                                
         }
-        return true;
+        return false;
 }
 
 ImageEditor& ImageEditor::operator*=(unsigned int n)
