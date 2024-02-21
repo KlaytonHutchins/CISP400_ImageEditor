@@ -114,5 +114,24 @@ bool ImageEditor::operator!=(const ImageEditor& ie) const
 ImageEditor& ImageEditor::operator*=(unsigned int n)
 {
 	// expand by factor of n by n
+	Picture temp(pic.width() * n, pic.height() * n, 255, 255, 255);
+
+	for (int i = 0; i < pic.height(); i++)
+        {
+                for (int j = 0; j < pic.width(); j++)
+                {
+
+			for (int k = 0; k < n; k++)
+			{
+				for (int l = 0; l < n; l++)
+				{
+					temp.set((j*n)+l, (i*n)+k, pic.red(j,i), pic.green(j,i), pic.blue(j,i));
+				}
+			}
+
+                }       
+        }
+
+	this->pic = temp;
         return *this;
 }
