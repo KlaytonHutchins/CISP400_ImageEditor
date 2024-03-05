@@ -124,12 +124,14 @@ ImageEditor& ImageEditor::operator*=(unsigned int n)
         {
 		for (int x = 0; x < pic.width(); x++)
 		{
-
-			for (int dy = 0; dy < n; dy++)
+			int r = pic.red(x, y);
+			int g = pic.green(x, y);
+			int b = pic.blue(x, y);
+			for (unsigned int dy = 0; dy < n; dy++)
 			{
-				for (int dx = 0; dx < n; dx++)
+				for (unsigned int dx = 0; dx < n; dx++)
 				{
-					picOut.set((x*n)+dx, (y*n)+dy, pic.red(x,y), pic.green(x,y), pic.blue(x,y));
+					picOut.set((x * n) + dx, (y * n) + dy, r, g, b);
 				}
 			}
 

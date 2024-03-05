@@ -8,13 +8,13 @@ default: lodepng.o picture.o ImageEditor.o main.o
 lodepng.o: lodepng.cpp
 	$(CC) $(CFLAGS) lodepng.cpp
 
-picture.0: picture.cpp
+picture.o: picture.cpp
 	$(CC) $(CFLAGS) picture.cpp
 
-ImageEditor.0: ImageEditor.cpp
+ImageEditor.o: ImageEditor.cpp
 	$(CC) $(CFLAGS) ImageEditor.cpp
 
-main.0: main.cpp
+main.o: main.cpp
 	$(CC) $(CFLAGS) main.cpp
 
 clean:
